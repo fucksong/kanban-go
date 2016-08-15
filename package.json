@@ -1,0 +1,25 @@
+{
+  "name": "kanban-go",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "develop": "NODE_ENV=development nodemon --exec \"npm start\"",
+    "start": "NODE_PATH=./ node lib/server.js",
+    "test": "NODE_ENV=test NODE_PATH=./ mocha test/setup.js test/**/*_test.js --colors --reporter min"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "body-parser": "~1.15.1",
+    "colors": "^1.1.2",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.13.4",
+    "morgan": "~1.7.0",
+    "redis": "^2.6.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.0"
+  }
+}
