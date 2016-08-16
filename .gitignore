@@ -2,6 +2,9 @@
 node_modules
 npm-debug.log
 
+# release files
+dist
+
 # Global/Temp.gitignore
 *~
 *.swp

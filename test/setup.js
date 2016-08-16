@@ -1,5 +1,5 @@
 // spy
-var chai = require('chai');
-var spies = require('chai-spies');
+import chai from 'chai';
+import spies from 'chai-spies';
 
 chai.use(spies);

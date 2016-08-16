@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "develop": "NODE_ENV=development nodemon --exec \"npm start\"",
-    "start": "NODE_PATH=./ node lib/server.js",
-    "test": "NODE_ENV=test NODE_PATH=./ mocha test/setup.js test/**/*_test.js --colors --reporter min"
+    "start": "NODE_PATH=./ nodemon lib/server.js --exec babel-node",
+    "build": "NODE_PATH=./ babel lib -d dist",
+    "release": "NODE_PATH=./ node dist/server.js",
+    "test": "NODE_ENV=test NODE_PATH=./ mocha test/setup.js test/**/*_test.js --colors --reporter min --compilers js:babel-register"
   },
   "dependencies": {
     "bluebird": "^3.4.1",
@@ -17,6 +18,11 @@
     "redis": "^2.6.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-2": "^6.13.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
     "mocha": "^3.0.2",
